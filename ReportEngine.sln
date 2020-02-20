@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29709.97
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReportEngine", "ReportEngine.csproj", "{08D4B5D8-6650-42F8-B08B-22080D44B52D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataLayer", "DataLayer\DataLayer.csproj", "{2A609D56-11BC-41DC-93B0-0E95C59F8306}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuisnessLayer", "BuisnessLayer\BuisnessLayer.csproj", "{8FC0FD0F-9690-4117-983F-4B1786C99C6D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{08D4B5D8-6650-42F8-B08B-22080D44B52D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08D4B5D8-6650-42F8-B08B-22080D44B52D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08D4B5D8-6650-42F8-B08B-22080D44B52D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08D4B5D8-6650-42F8-B08B-22080D44B52D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A609D56-11BC-41DC-93B0-0E95C59F8306}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A609D56-11BC-41DC-93B0-0E95C59F8306}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A609D56-11BC-41DC-93B0-0E95C59F8306}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A609D56-11BC-41DC-93B0-0E95C59F8306}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8FC0FD0F-9690-4117-983F-4B1786C99C6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FC0FD0F-9690-4117-983F-4B1786C99C6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FC0FD0F-9690-4117-983F-4B1786C99C6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FC0FD0F-9690-4117-983F-4B1786C99C6D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {729F1E7F-FAAA-4486-9EB4-004DDF60444C}
+		VisualSVNWorkingCopyRoot = .
+	EndGlobalSection
+EndGlobal

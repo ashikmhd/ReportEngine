@@ -1,0 +1,441 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPageFile.master.cs" Inherits="ReportEngine.MasterPageFile" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>HealthClub</title>
+    <link rel="icon" href="images/BSLogo.ico" type="image/png">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+        name="viewport" />
+    <!-- Bootstrap 3.3.7 -->
+    <link rel="stylesheet" href='<%=ResolveUrl("~/bower_components/bootstrap/dist/css/bootstrap.min.css") %>'
+        type="text/css" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href='<%=ResolveUrl("~/bower_components/font-awesome/css/font-awesome.min.css") %>'
+        type="text/css" />
+    <!-- Ionicons -->
+    <link rel="stylesheet" href='<%=ResolveUrl("~/bower_components/Ionicons/css/ionicons.min.css") %>' />
+    <!-- Theme style -->
+    <link rel="stylesheet" href='<%=ResolveUrl("~/dist/css/AdminLTE.min.css") %>' />
+    <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+    <link rel="stylesheet" href='<%=ResolveUrl("~/dist/css/skins/_all-skins.min.css") %>' />
+    <link href='<%=ResolveUrl("~/dist/css/animate.css") %>' rel="stylesheet" />
+    <script src='<%=ResolveUrl("~/bower_components/jquery/dist/jquery.min.js") %>' type="text/javascript"></script>
+    <script src='<%=ResolveUrl("~/bower_components/jquery-ui/jquery-ui.min.js") %>' type="text/javascript"></script>
+    <link href='<%=ResolveUrl("~/bower_components/jquery-ui/themes/blitzer/jquery-ui.css") %>'
+        rel="stylesheet" type="text/css" />
+    <script src='<%=ResolveUrl("~/Scripts/Scripts.js?version=2") %>' type="text/javascript"></script>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+    <!-- Google Font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic" />
+    <script type="text/javascript">
+        function switchBusyDiv(mode) {
+            if (document.getElementById('progressimagediv') != null) {
+                document.getElementById('progressimagediv').style.display = mode;
+            }
+        }
+        function search(OutletId) {
+            //var pathname = window.location.pathname; // Returns path only
+            var urlCurrent = window.location.href;     // Returns full URL
+            //var origin = window.location.origin;   // Returns base URL
+
+            $.ajax({
+                type: "POST",
+                url: '<%=ResolveUrl("~/General/OutletInfo.aspx/selectOutlet")%>',
+                data: '{ outletid:' + OutletId + '}',
+                contentType: "application/json; charset=utf-8",
+
+                success: function (result) {
+                    //window.location.href = '<%=ResolveUrl("~/Main.aspx")%>';
+                    window.location.href = urlCurrent;
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                    alert(xhr.status);
+                    alert(thrownError);
+                }
+            });
+        }
+    </script>
+    <style type="text/css">
+        .disableBg {
+            background: rgba(0, 0, 0, 0) url("../images/disableBg.png") repeat scroll 0 0;
+            height: 100%;
+            margin: 0;
+            position: fixed;
+            width: 100%;
+            z-index: 25000;
+        }
+
+            .disableBg .logo {
+                --background: url() no-repeat #f6f8f9;
+                border-radius: 100px;
+                height: 150px;
+                left: 50%;
+                margin: -75px 0 0 -75px;
+                position: fixed;
+                top: 50%;
+                width: 150px;
+            }
+
+                .disableBg .logo .loader {
+                    height: 66px;
+                    margin: 57px 0 0 42px;
+                    width: 66px;
+                }
+
+        .busy_bodysoul {
+            animation: 2s linear 0s normal none infinite running spin;
+            height: 125px;
+            left: 50%;
+            margin: -75px 0 0 -75px;
+            position: fixed;
+            top: 50%;
+            width: 125px;
+        }
+
+        @keyframes spin {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes spin {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .style2 {
+            color: #FFCC99;
+            font-family: Arial;
+            font-size: medium;
+        }
+         .padding5 {
+            padding-bottom: 8px;
+        }
+    </style>
+</head>
+<!-- ADD THE CLASS fixed TO GET A FIXED HEADER AND SIDEBAR LAYOUT -->
+<!-- the fixed layout is not compatible with sidebar-mini -->
+<body class="skin-blue fixed sidebar-mini sidebar-mini-expand-feature sidebar-collapse">
+    <!--removed: fixed -->
+    <!-- Site wrapper -->
+    <div class="wrapper">
+        <header class="main-header">
+        
+    <!-- Logo -->
+    <a href="../../index2.html" class="logo">
+      <!-- mini logo for sidebar mini 50x50 pixels -->
+      <span class="logo-mini"><b>A</b>LT</span>
+      <!-- logo for regular state and mobile devices -->
+      <span class="logo-lg"><b>Admin</b>LTE</span>
+    </a>
+    <!-- Header Navbar: style can be found in header.less -->
+    <nav class="navbar navbar-static-top">
+      <!-- Sidebar toggle button-->
+      <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+
+      <span style="float:left;padding: 10px 10px; color:#bf149e; font-size:15pt; font-style:normal; font-family:Arial;" >HealthClub Management System</span>
+
+      <div class="navbar-custom-menu">
+        <ul class="nav navbar-nav">
+          <!-- Messages: style can be found in dropdown.less-->
+          <li class="dropdown messages-menu">
+            <a href="#" class="dropdown-toggle"  data-toggle="dropdown">
+              <asp:Label ID="lblOutlet" runat="server" Text=""></asp:Label>
+            </a>
+            
+            <ul class="dropdown-menu" style="border:1px solid #00b29c">
+              <!-- User image -->
+              <li class="user-header" style="background-color:#00b29c">
+                
+              </li>
+              <asp:Literal ID="ltrOutletLists" runat="server"></asp:Literal>  
+                       
+            </ul>
+          </li>
+          <li class="dropdown messages-menu">
+            <a href="#" class="glyphicon glyphicon-user" >
+             
+            </a>
+            
+          </li>
+          <!-- Notifications: style can be found in dropdown.less -->
+          <li class="dropdown notifications-menu">
+            <a href="#" class="glyphicon glyphicon-shopping-cart">
+             
+            </a>
+            
+          </li>
+          <!-- Tasks: style can be found in dropdown.less -->
+         <%-- <li class="dropdown tasks-menu">
+            <a href="#" class="glyphicon glyphicon-earphone">
+              </a>
+            <ul class="dropdown-menu">
+              <li class="header">You have 0 tasks</li>
+              <li>
+                <!-- inner menu: contains the actual data -->
+                <ul class="menu">
+                  <li><!-- Task item -->
+                    <a href="#">
+                      <h3>
+                        Design some buttons
+                        <small class="pull-right">20%</small>
+                      </h3>
+                      <div class="progress xs">
+                        <div class="progress-bar progress-bar-aqua" style="width: 20%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                          <span class="sr-only">20% Complete</span>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                  <!-- end task item -->
+                </ul>
+              </li>
+              <li class="footer">
+                <a href="#">View all tasks</a>
+              </li>
+            </ul>
+          </li>--%>
+          <!-- User Account: style can be found in dropdown.less -->
+          <li class="dropdown user user-menu">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <img src='<%=ResolveUrl("~/dist/img/user2-160x160.jpg") %>' class="user-image" alt="User Image">
+              <span class="hidden-xs" id="Loggeduser" runat="server"></span>
+            </a>
+            
+              <ul class="dropdown-menu" style="border:1px solid #00b29c">
+              <!-- User image -->
+              <li class="user-header" style="background-color:#00b29c">
+                <img src='<%=ResolveUrl("dist/img/user2-160x160.jpg") %>' class="img-circle" alt="User Image">
+                <p>
+                     <span id="Spanuser" runat="server" ></span><br />
+                     <span id="spanuserrole" runat="server" ></span>
+                </p>
+              </li>
+              <!-- Menu Body -->
+ 
+              <!-- Menu Footer-->
+              <li class="user-footer">
+                <div class="pull-left">
+                  <a href="#" class="btn btn-default btn-flat">Profile</a>
+                </div>
+                <div class="pull-right">
+                  <a href='<%= ResolveUrl("Authentication.aspx?page=lo") %>' class="btn btn-default btn-flat">Sign out</a>
+                </div>
+              </li>
+            </ul>
+          </li>
+          <!-- Control Sidebar Toggle Button -->
+          <li>
+            <a href="#" data-toggle="control-sidebar"><i class="glyphicon glyphicon-phone-alt"></i></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+        <!-- =============================================== -->
+        <!-- Left side column. contains the sidebar -->
+        <aside class="main-sidebar">
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+      <!-- search form -->
+      <%--<form action="#" method="get" class="sidebar-form">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Search...">
+              <span class="input-group-btn">
+                <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
+                </button>
+              </span>
+        </div>
+      </form>--%>
+      <!-- /.search form -->
+      <!-- sidebar menu: : style can be found in sidebar.less -->
+      <ul class="sidebar-menu" data-widget="tree">
+        <li class="header"><a href='<%= ResolveUrl("Main.aspx") %>' >Home</a></li>
+      </ul>
+       <div ID="cssmenu" runat="server"></div>
+    </section>
+    <!-- /.sidebar -->
+  </aside>
+        <!-- =============================================== -->
+
+        <div id="headerDiv" class="content-wrapper animated fadeInRight">
+            <!-- Content Header (Page header) -->
+            <!-- Main content -->
+            <section class="content">
+     <form id="form2" runat="server" >
+      
+      <asp:ScriptManager ID="sm" runat="server"></asp:ScriptManager>
+<asp:UpdateProgress AssociatedUpdatePanelID="updtpnlmenu" ID="updtprgress" runat="server" DisplayAfter="1">
+<ProgressTemplate>
+<div id="loading_modal" class="disableBg">
+    <div class="logo">
+        <div class="loader">
+            <img alt="" src='<%= ResolveUrl("~/images/BS_LOGO_Head.png") %>'  class="busy_bodysoul spin">
+        </div>
+    </div>
+</div> 
+</ProgressTemplate>
+</asp:UpdateProgress>
+      <asp:UpdatePanel ID="updtpnlmenu" runat="server" >
+       <ContentTemplate>       
+         <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+
+        </asp:ContentPlaceHolder>
+         </ContentTemplate>
+       </asp:UpdatePanel>
+     </form> 
+   </section>
+            <!-- /.content -->
+        </div>
+        <!-- /.content-wrapper -->
+        <footer class="main-footer">
+    <div class="pull-right hidden-xs">
+      <b>Version</b> 1.0.0
+    </div>
+    <strong>© Thumbay Technologies LLC. All Rights Reserved</strong>
+  </footer>
+        <!-- Control Sidebar -->
+        <aside class="control-sidebar control-sidebar-dark">
+    <!-- Create the tabs -->
+    
+      <%--<li><a href="#" data-toggle=""><i class=""></i></a></li>--%>
+    </ul>
+    <!-- Tab panes -->
+    <div class="tab-content">
+      <!-- Home tab content -->
+    <%--  <div class="tab-pane" id="control-sidebar-home-tab">--%>
+ <%--     <h3 class="control-sidebar-heading">Recent Activity</h3>--%>
+
+        <!-- /.control-sidebar-menu -->
+<%--
+        <h3 class="control-sidebar-heading">Tasks Progress</h3>--%>
+        
+        <!-- /.control-sidebar-menu -->
+
+      </div>
+      <!-- /.tab-pane -->
+      <!-- Stats tab content -->
+      <asp:Image ID="TTLogo" runat="server" Height="80px" 
+            ImageUrl="~/images/TT_Logo.png" Width="170px"></asp:Image>
+      <div class="style2" id="control-sidebar-stats-tab"><strong>Application Support</strong></div>
+      <br />
+      
+      <!-- /.tab-pane -->
+      <!-- Settings tab content -->
+      <div class="tab-pane" id="control-sidebar-settings-tab">
+        <form method="post">
+        <asp:Image ID="BAjIMG" runat="server" Height="86px" 
+            ImageUrl="~/images/Bajesh_Photo.jpg" Width="77px"></asp:Image>
+          <h3 class="style2">Mr. Bajesh (+971-50-3860699)</h3>
+          <br />
+
+          <!-- /.form-group -->
+
+         <%-- <div class="form-group">
+            
+          </div>--%>
+          <!-- /.form-group -->
+
+         <%-- <div class="form-group">
+
+          </div>--%>
+          <!-- /.form-group -->
+          <asp:Image ID="AshImg" runat="server" Height="86px" 
+            ImageUrl="~/images/Ashik_Photo.jpg" Width="77px"></asp:Image>
+          <h3 class="style2">Mr. Ashik (+971-55-9850908)</h3>
+          <br />
+          <br />
+         
+          <p class="glyphicon glyphicon-envelope " >
+            For Hardware IT Support Email to
+            <a href="mailto:support@it.thumbay.com" target="_top">support@it.thumbay.com</a>
+            </p>
+            
+          <!-- /.form-group -->
+
+
+          <!-- /.form-group -->
+
+          <div class="form-group">
+
+          </div>
+          <!-- /.form-group -->
+        </form>
+      </div>
+      <!-- /.tab-pane -->
+    </div>
+    </aside>
+    <!-- /.control-sidebar -->
+    <!-- Add the sidebar's background. This div must be placed
+       immediately after the control sidebar -->
+    <div class="control-sidebar-bg">
+    </div>
+    <!-- ./wrapper -->
+    <!-- jQuery 3 -->
+    <!-- Bootstrap 3.3.7 -->
+    <script src='<%=ResolveUrl("~/bower_components/bootstrap/dist/js/bootstrap.min.js") %>'
+        type="text/javascript"></script>
+    <!-- SlimScroll -->
+    <script src='<%=ResolveUrl("~/bower_components/jquery-slimscroll/jquery.slimscroll.min.js") %>'
+        type="text/javascript"></script>
+    <!-- FastClick -->
+    <script src='<%=ResolveUrl("~/bower_components/fastclick/lib/fastclick.js") %>' type="text/javascript"></script>
+    <!-- AdminLTE App -->
+    <script src='<%=ResolveUrl("~/dist/js/adminlte.min.js") %>' type="text/javascript"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src='<%=ResolveUrl("~/dist/js/demo.js") %>' type="text/javascript"></script>
+    <!--  DataPicker-->
+    <link href='<%=ResolveUrl("~/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.css") %>'
+        rel="stylesheet" type="text/css" />
+    <script src='<%=ResolveUrl("~/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.js") %>'></script>
+    <!--  Date Range Picker-->
+    <link href='<%=ResolveUrl("~/bower_components/daterangepicker/daterangepicker-bs3.css") %>'
+        rel="stylesheet" type="text/css" />
+    <script src='<%=ResolveUrl("~/bower_components/daterangepicker/daterangepicker.js") %>'
+        type="text/javascript"></script>
+    <!-- Datatable into Grid-->
+    <link href='<%=ResolveUrl("~/bower_components/datatables.net-bs/css/dataTables.bootstrap.css") %>'
+        rel="stylesheet" type="text/css" />
+    <script src='<%=ResolveUrl("~/bower_components/dataTables/datatables.min.js") %>'
+        type="text/javascript"></script>
+    <!-- DropDown Seacrh Classes-->
+    <link href='<%=ResolveUrl("~/bower_components/select2/dist/css/select2.css") %>'
+        rel="stylesheet" type="text/css" />
+    <script src='<%=ResolveUrl("~/bower_components/select2/dist/js/select2.min.js") %>'
+        type="text/javascript"></script>
+    <!-- Input Mask : Masked Text boxes-->
+    <script src='<%=ResolveUrl("~/bower_components/inputmask/dist/inputmask/inputmask.js") %>'
+        type="text/javascript"></script>
+    <script src='<%=ResolveUrl("~/bower_components/inputmask/dist/inputmask/inputmask.numeric.extensions.js") %>'
+        type="text/javascript"></script>
+    <script src='<%=ResolveUrl("~/bower_components/inputmask/dist/inputmask/jquery.inputmask.js") %>'
+        type="text/javascript"></script>
+    <script src='<%=ResolveUrl("~/bower_components/notify/bootstrap-notify.min.js") %>'
+        type="text/javascript"></script>
+
+    <script src='<%=ResolveUrl("~/Scripts/jquery.mask.min.js") %>' type="text/javascript"></script>
+    <link href='<%=ResolveUrl("~/dist/css/ng-responsive.css") %>' rel="stylesheet" type="text/css" />
+
+    <link type="text/css" href='<%=ResolveUrl("~/bower_components/checkbox-multiselect/bootstrap-multiselect.css") %>' rel="stylesheet" />
+    <script type="text/javascript" src='<%=ResolveUrl("~/bower_components/checkbox-multiselect/bootstrap-multiselect.js") %>'></script>
+
+    <link type="text/css" rel="stylesheet" href='<%=ResolveUrl("~/bower_components/Toastr/toastr.min.css") %>' />
+    <script type="text/javascript" src='<%=ResolveUrl("~/bower_components/Toastr/toastr.min.js") %>'></script>
+</body>
+</html>

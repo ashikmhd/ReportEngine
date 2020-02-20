@@ -1,0 +1,10 @@
+D:\Projects\SVN Projects\DataLayer\obj\Debug\DataLayer.csprojAssemblyReference.cache
+D:\Projects\SVN Projects\DataLayer\bin\Debug\DataLayer.dll
+D:\Projects\SVN Projects\DataLayer\bin\Debug\DataLayer.pdb
+D:\Projects\SVN Projects\DataLayer\obj\Debug\DataLayer.dll
+D:\Projects\SVN Projects\DataLayer\obj\Debug\DataLayer.pdb
+D:\Projects\SVN Projects\CentralReports\DataLayer\bin\Debug\DataLayer.dll
+D:\Projects\SVN Projects\CentralReports\DataLayer\bin\Debug\DataLayer.pdb
+D:\Projects\SVN Projects\CentralReports\DataLayer\obj\Debug\DataLayer.dll
+D:\Projects\SVN Projects\CentralReports\DataLayer\obj\Debug\DataLayer.pdb
+D:\Projects\SVN Projects\CentralReports\DataLayer\obj\Debug\DataLayer.csprojAssemblyReference.cache

@@ -1,0 +1,16 @@
+D:\Projects\SVN Projects\BuisnessLayer\bin\Debug\BuisnessLayer.dll
+D:\Projects\SVN Projects\BuisnessLayer\bin\Debug\BuisnessLayer.pdb
+D:\Projects\SVN Projects\BuisnessLayer\bin\Debug\DataLayer.dll
+D:\Projects\SVN Projects\BuisnessLayer\bin\Debug\DataLayer.pdb
+D:\Projects\SVN Projects\BuisnessLayer\obj\Debug\BuisnessLayer.csprojAssemblyReference.cache
+D:\Projects\SVN Projects\BuisnessLayer\obj\Debug\BuisnessLayer.csproj.CopyComplete
+D:\Projects\SVN Projects\BuisnessLayer\obj\Debug\BuisnessLayer.dll
+D:\Projects\SVN Projects\BuisnessLayer\obj\Debug\BuisnessLayer.pdb
+D:\Projects\SVN Projects\CentralReports\BuisnessLayer\bin\Debug\BuisnessLayer.dll
+D:\Projects\SVN Projects\CentralReports\BuisnessLayer\bin\Debug\BuisnessLayer.pdb
+D:\Projects\SVN Projects\CentralReports\BuisnessLayer\bin\Debug\DataLayer.dll
+D:\Projects\SVN Projects\CentralReports\BuisnessLayer\bin\Debug\DataLayer.pdb
+D:\Projects\SVN Projects\CentralReports\BuisnessLayer\obj\Debug\BuisnessLayer.csprojAssemblyReference.cache
+D:\Projects\SVN Projects\CentralReports\BuisnessLayer\obj\Debug\BuisnessLayer.csproj.CopyComplete
+D:\Projects\SVN Projects\CentralReports\BuisnessLayer\obj\Debug\BuisnessLayer.dll
+D:\Projects\SVN Projects\CentralReports\BuisnessLayer\obj\Debug\BuisnessLayer.pdb
