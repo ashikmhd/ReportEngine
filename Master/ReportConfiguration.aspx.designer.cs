@@ -60,6 +60,15 @@ namespace ReportEngine.Master
         protected global::System.Web.UI.WebControls.TextBox txtReportDescription;
 
         /// <summary>
+        /// drpActive control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList drpActive;
+
+        /// <summary>
         /// txtReportQuery control.
         /// </summary>
         /// <remarks>

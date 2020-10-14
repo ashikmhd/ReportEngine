@@ -22,6 +22,7 @@ namespace BuisnessLayer.Master
         public string ReportControls;
         public string ReportProperties;
         public int fki_CreatedBy;
+        public int b_IsActive;
         public string OutputMessage = "";
 
         public DataTable ControlType_Select()
@@ -74,6 +75,7 @@ namespace BuisnessLayer.Master
                 sqlCmd.Parameters.AddWithValue("@ReportControls", ReportControls);
                 sqlCmd.Parameters.AddWithValue("@ReportProperties", ReportProperties);
                 sqlCmd.Parameters.AddWithValue("@fki_CreatedBy", fki_CreatedBy);
+                sqlCmd.Parameters.AddWithValue("@b_IsActive", b_IsActive);
                 sqlCmd.Parameters.Add("@OutputMessage", SqlDbType.VarChar, 200).Value = OutputMessage;
                 sqlCmd.Parameters["@OutputMessage"].Direction = ParameterDirection.Output;
 

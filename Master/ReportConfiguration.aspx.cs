@@ -1,5 +1,6 @@
 ﻿using BuisnessLayer.Master;
 using BuisnessLayer.Reports;
+using BusinessLayer.General;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -108,6 +109,7 @@ namespace ReportEngine.Master
                     txtReportQuery.Text = drSelected["vc_ReportQuery"].ToString();
                     txtInsertQuery.Text = drSelected["vc_InsertQuery"].ToString();
                     txtUpdateQuery.Text = drSelected["vc_UpdateQuery"].ToString();
+                    drpActive.SelectedValue = drSelected["b_IsActive"].ToString();
 
                     visibilityControls();
 
@@ -321,7 +323,8 @@ namespace ReportEngine.Master
                 rptConfiguration.vc_UpdateQuery = txtUpdateQuery.Text;
                 rptConfiguration.ReportControls = swReportControls.ToString();
                 rptConfiguration.ReportProperties = swReportProperties.ToString();
-                rptConfiguration.fki_CreatedBy = 1;
+                rptConfiguration.fki_CreatedBy = ((BaseRequest)Session["cache"]).BaseUserId;
+                rptConfiguration.b_IsActive = int.Parse(drpActive.SelectedValue);
                 rptConfiguration.ReportConfiguration_Save();
 
 

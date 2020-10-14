@@ -11,6 +11,8 @@
 
             /*Remove this class for modal popup conflict*/
             $('#headerDiv').removeClass('fadeInRight');
+
+            GridDisplay('<%= gvReportDetails.ClientID %>', 'Report List');
         }
 
         function openModelMapWindow(ReportId, Flag) {
@@ -60,13 +62,19 @@
                         <asp:BoundField DataField="vc_ReportQuery" HeaderText="Select Query" />
                         <asp:BoundField DataField="vc_InsertQuery" HeaderText="Insert Query" />
                         <asp:BoundField DataField="vc_UpdateQuery" HeaderText="Update Query" />
+                        <%--<asp:BoundField DataField="IsActiveText" HeaderText="Active"/>--%>
+                        <asp:TemplateField HeaderText="Active">
+                            <ItemTemplate>
+                                  <asp:Label runat="server" ID="lblStatus" Text='<%# Eval("IsActiveText") %>' BackColor= '<%# System.Drawing.ColorTranslator.FromHtml(Eval("IsActiveBgColor").ToString())%>'> </asp:Label>
+                            </ItemTemplate>
+                        </asp:TemplateField>
                         <asp:TemplateField HeaderText="Actions">
                             <ItemTemplate>
-                                <a href="#" onclick="<%# "javascript:return Redirect('ReportConfiguration.aspx?ReportId=" + Eval("pki_ReportId") + "')" %>">
+                                <a href="#" onclick="<%# "javascript:return Redirect('ReportConfiguration.aspx?ReportId=" + Eval("pki_ReportId") + "')" %>" title="Edit">
                                     <i class="fa fa-edit"></i></a>
-                                 <a href="#" onclick="javascript:openModelMapWindow('<%# Eval("pki_ReportId") %>',0)">
+                                 <a href="#" onclick="javascript:openModelMapWindow('<%# Eval("pki_ReportId") %>',0)" title="Map Outlet">
                                     <i class="fa fa-briefcase"></i></a>
-                                <a href="#" onclick="javascript:openModelMapWindow('<%# Eval("pki_ReportId") %>',1)">
+                                <a href="#" onclick="javascript:openModelMapWindow('<%# Eval("pki_ReportId") %>',1)" title="Map User">
                                     <i class="fa fa-users"></i></a>
                             </ItemTemplate>
                         </asp:TemplateField>

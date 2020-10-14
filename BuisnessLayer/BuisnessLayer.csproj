@@ -43,9 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="General\CommonStaticClass.cs" />
     <Compile Include="General\Email.cs" />
     <Compile Include="General\MD5Encoder.cs" />
     <Compile Include="Master\ClsUserRollPermission.cs" />
+    <Compile Include="Master\OutletCls.cs" />
+    <Compile Include="Master\CompanyCls.cs" />
     <Compile Include="Master\MapReport.cs" />
     <Compile Include="Master\rptConfiguration.cs" />
     <Compile Include="Master\UserComponent.cs" />

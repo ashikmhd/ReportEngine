@@ -13,6 +13,18 @@
              <asp:HiddenField runat="server" ID="hdnConnection"></asp:HiddenField>
             <div class="row">
                 <div class="col-md-1">
+                    <asp:Label ID="Label1" runat="server" Text="Select Company" />
+                </div>
+                <div class="col-md-3">
+                    <asp:DropDownList ID="drpCompanyMasterPage" runat="server" AutoPostBack="true" OnSelectedIndexChanged="drpCompanyMasterPage_SelectedIndexChanged" CssClass="form-control"></asp:DropDownList>
+                </div>
+                <div class="col-md-1">
+                    <asp:Label ID="Label3" runat="server" Text="Select Outlet" />
+                </div>
+                <div class="col-md-3">
+                    <asp:DropDownList ID="drpOutletMasterPage" runat="server" AutoPostBack="true" OnSelectedIndexChanged="drpOutletMasterPage_SelectedIndexChanged" CssClass="form-control"></asp:DropDownList>
+                </div>
+                <div class="col-md-1">
                     <asp:Label ID="lbl" runat="server" Text="Select Report" />
                 </div>
                 <div class="col-md-3">

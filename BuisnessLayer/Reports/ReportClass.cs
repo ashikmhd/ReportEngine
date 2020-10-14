@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace BuisnessLayer.Reports
-{   
+{
     public class ReportClass : Base
     {
         public short Flag = 0;
@@ -16,6 +16,8 @@ namespace BuisnessLayer.Reports
         public int i_Type;
         public ReportDTO ReportDTO;
         public int UserId;
+        public int fki_CompanyId = 0;
+        public int fki_OutletId = 0;
         public DataSet ReportControls_Select()
         {
             DataSet dataSet = new DataSet();
@@ -27,6 +29,8 @@ namespace BuisnessLayer.Reports
                 sqlCmd.Parameters.AddWithValue("@pki_ReportId", pki_ReportId);
                 sqlCmd.Parameters.AddWithValue("@i_Type", i_Type);
                 sqlCmd.Parameters.AddWithValue("@UserId", UserId);
+                sqlCmd.Parameters.AddWithValue("@fki_CompanyId", fki_CompanyId);
+                sqlCmd.Parameters.AddWithValue("@fki_OutletId", fki_OutletId);
                 dataSet = ExecuteDataset(sqlCmd);
                 return dataSet;
             }

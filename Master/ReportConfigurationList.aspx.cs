@@ -1,4 +1,6 @@
-﻿using BuisnessLayer.Reports;
+﻿using BuisnessLayer.General;
+using BuisnessLayer.Reports;
+using BusinessLayer.General;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -28,6 +30,8 @@ namespace ReportEngine.Master
 
             gvReportDetails.DataSource = ds.Tables[0];
             gvReportDetails.DataBind();
+            gvReportDetails.enableUserAccessibleGrid();
+            //BusinessLayer.General.Common.enableUserAccessibleGrid(gvReportDetails);
         }
     }
 }

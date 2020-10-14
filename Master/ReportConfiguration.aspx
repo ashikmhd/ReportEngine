@@ -9,6 +9,7 @@
             $('[id*=lstControlProperties]').multiselect({
                 includeSelectAllOption: true
             });
+            
         }
     </script>
 
@@ -35,6 +36,13 @@
                 <div class="col-md-3">
                     Report Description
                     <asp:TextBox ID="txtReportDescription" runat="server" CssClass="form-control" required></asp:TextBox>
+                </div>
+                <div class="col-md-2">
+                    Active
+                    <asp:DropDownList ID="drpActive" runat="server" CssClass="form-control" AutoPostBack="true" OnSelectedIndexChanged="drpType_SelectedIndexChanged">
+                        <asp:ListItem Value="1">Active</asp:ListItem>
+                        <asp:ListItem Value="0">In Active</asp:ListItem>
+                    </asp:DropDownList>
                 </div>
             </div>
             <div class="row padding5">

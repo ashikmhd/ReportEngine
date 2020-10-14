@@ -1,4 +1,5 @@
 ﻿using BuisnessLayer;
+using BuisnessLayer.Master;
 using BuisnessLayer.Reports;
 using BuisnessLayer.Transactions;
 using BusinessLayer.General;
@@ -20,6 +21,8 @@ namespace ReportEngine.Master
         {
             if (!IsPostBack)
             {
+                BindCompany();
+                BindOutlet();
                 BindReportNames();
                 if (Request.QueryString["ReportId"] != null)
                 {
@@ -28,18 +31,46 @@ namespace ReportEngine.Master
                 }
             }
         }
+
+        private void BindCompany()
+        {
+            CompanyCls companyCls = new CompanyCls();
+            companyCls.Flag = 0;
+            DataTable dt = companyCls.Company_Select();
+
+            drpCompanyMasterPage.DataSource = dt;
+            drpCompanyMasterPage.DataTextField = "vc_CompanyName";
+            drpCompanyMasterPage.DataValueField = "pki_CompanyId";
+            drpCompanyMasterPage.DataBind();
+            drpCompanyMasterPage.Items.Insert(0, new ListItem("All", "0"));
+        }
+        private void BindOutlet()
+        {
+            OutletCls outletCls = new OutletCls();
+            outletCls.Flag = 0;
+            outletCls.fki_CompanyId = Int32.Parse(drpCompanyMasterPage.SelectedValue);
+            DataTable dt = outletCls.Outlet_Select();
+
+            drpOutletMasterPage.DataSource = dt;
+            drpOutletMasterPage.DataTextField = "vc_OutletName";
+            drpOutletMasterPage.DataValueField = "pki_OutletId";
+            drpOutletMasterPage.DataBind();
+            drpOutletMasterPage.Items.Insert(0, new ListItem("All", "0"));
+        }
         private void BindReportNames()
         {
             reportClass = new ReportClass();
             reportClass.Flag = 0;
             reportClass.i_Type = 2;
             reportClass.pki_ReportId = 0;
+            reportClass.fki_CompanyId = Int32.Parse(drpCompanyMasterPage.SelectedValue);
+            reportClass.fki_OutletId = Int32.Parse(drpOutletMasterPage.SelectedValue);
             reportClass.UserId = ((BaseRequest)Session["cache"]).BaseUserId;
             DataSet ds = reportClass.ReportControls_Select();
 
             DataTable dt = ds.Tables[0];
             drpReportName.DataSource = dt;
-            drpReportName.DataTextField = "vc_ReportName";
+            drpReportName.DataTextField = "ReportName";
             drpReportName.DataValueField = "pki_ReportId";
             drpReportName.DataBind();
 
@@ -111,5 +142,14 @@ namespace ReportEngine.Master
             ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", BusinessLayer.General.Common.ToastrCall(type, message), true);
         }
 
+        protected void drpCompanyMasterPage_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            BindOutlet();
+            BindReportNames();
+        }
+        protected void drpOutletMasterPage_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            BindReportNames();
+        }
     }
 }
