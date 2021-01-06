@@ -5,8 +5,8 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>HealthClub</title>
-    <link rel="icon" href="images/BSLogo.ico" type="image/png">
+    <title>TTCentralReports</title>
+    <link rel="icon" href="images/ttlogo_icon.ico" type="image/png">
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
         name="viewport" />
@@ -149,7 +149,7 @@
         <span class="icon-bar"></span>
       </a>
 
-      <span style="float:left;padding: 10px 10px; color:#bf149e; font-size:15pt; font-style:normal; font-family:Arial;" >HealthClub Management System</span>
+      <span style="float:left;padding: 10px 10px; color:#bf149e; font-size:15pt; font-style:normal; font-family:Arial;" >THUMBAY TECHNOLOGIES LLC-Central Reports</span>
 
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
@@ -159,9 +159,9 @@
               <asp:Label ID="lblOutlet" runat="server" Text=""></asp:Label>
             </a>
             
-            <ul class="dropdown-menu" style="border:1px solid #00b29c">
+            <ul class="dropdown-menu" style="border:1px solid #2a87c5">
               <!-- User image -->
-              <li class="user-header" style="background-color:#00b29c">
+              <li class="user-header" style="background-color:#2a87c5">
                 
               </li>
               <asp:Literal ID="ltrOutletLists" runat="server"></asp:Literal>  
@@ -220,7 +220,7 @@
             
               <ul class="dropdown-menu" style="border:1px solid #00b29c">
               <!-- User image -->
-              <li class="user-header" style="background-color:#00b29c">
+              <li class="user-header" style="background-color:#2a87c5">
                 <img src='<%=ResolveUrl("dist/img/user2-160x160.jpg") %>' class="img-circle" alt="User Image">
                 <p>
                      <span id="Spanuser" runat="server" ></span><br />
@@ -342,7 +342,7 @@
         <form method="post">
         <asp:Image ID="BAjIMG" runat="server" Height="86px" 
             ImageUrl="~/images/Bajesh_Photo.jpg" Width="77px"></asp:Image>
-          <h3 class="style2">Mr. Bajesh (+971-50-3860699)</h3>
+          <h3 class="style2">Mr. Bajesh (+971-52-4278054)</h3>
           <br />
 
           <!-- /.form-group -->

@@ -14,6 +14,7 @@ namespace ReportEngine.Master
         ClsUserRollPermission ObjRollPermission = null;
         protected void Page_Load(object sender, EventArgs e)
         {
+            ((MasterPageFile)this.Master).CheckSessionExpiry();
             if (Page.IsPostBack == false)
             {
                 //fillModules();

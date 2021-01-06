@@ -6,11 +6,10 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>HealthClub</title>
+    <title>TTCentralReports</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link rel="icon" href="images/BSLogo.ico" type="image/png">
+    <link rel="icon" href="images/ttlogo_icon.ico" type="image/png">
     <link href="~/../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="~/../dist/css/font-awesome.css" rel="stylesheet">
     <link href="~/../dist/css/animate.css" rel="stylesheet">
@@ -62,26 +61,46 @@
             <asp:HiddenField ID="hdnClientIpAddress" runat="server" />
             <asp:Label ID="lblmsg" runat="server"></asp:Label>
             <div class="login-logo">
-                <a href="http://bodyandsoulHealthClub.com/" title="Body &amp; Soul">
-                    <img src="images/BSAnimated.gif" alt="Logo" />
+                <a href="http://thumbaytechnologies.com/" title="Thumbay &amp; Technologies">
+                    <img src="images/Thumbaytechlogo.png" alt="Logo" />
                     <%--  <img src="images/thumbay-pharmacy-loader.gif" />--%>
                 </a>
                 <%--<asp:Image ID="Image1" align="right" runat="server" ImageUrl="~/images/logo.png" />--%>
             </div>
             <!-- /.login-logo -->
             <div>
-                <a href="#"><b style="color: #f57d20;"><span style="font-family: Segoe UI; font-size: 22px;">
-                    BODY & SOUL HEALTH CLUB</span></b></a>
+                &nbsp;
+
             </div>
             <div>
-                <marquee behavior="alternate" style="font-size: large; color: #FF0000; text-decoration: underline;"> <a href="Reports/HelpFiles/html_App_SupportFiles/HealthclubManagementSystem.html" target="Help" class="fa-file-pdf-o"> Help File(ClickHere)</a></marquee>
+                &nbsp;
+
             </div>
+            <div>
+                <a href="#"><b style="color: #ed2129;"><span style="font-family: Segoe UI; font-size: 26px;">
+                    THUMBAY TECHNOLOGIES LLC</span></b></a>
+            </div>
+            <div>
+                &nbsp;
+
+            </div>
+            <div>
+                <a href="#"><b style="color: #ed2129;"><span style="font-family: Segoe UI; font-size: 20px;">
+                    CENTRAL REPORTS</span></b></a>
+            </div>
+            <%--<div>
+                <marquee behavior="alternate" style="font-size: large; color: #FF0000; text-decoration: underline;"> <a href="Reports/HelpFiles/html_App_SupportFiles/HealthclubManagementSystem.html" target="Help" class="fa-file-pdf-o"> Help File(ClickHere)</a></marquee>
+            </div>--%>
             <%-- <div><marquee behavior="scroll" direction="left" scrollamount="3" >
             <a target="newpdf" href="TTechCircular.pdf">
              <img src="images/IMPCIRCULAR.png" width="210" height="60" alt="smile">
             </a>
             </marquee>
             </div>--%>
+            <div>
+                &nbsp;
+
+            </div>
             <div class="login-box-body">
                 <p class="login-box-msg" style="color: #737b35">
                     Sign in to start your session</p>
@@ -100,23 +119,31 @@
                 <asp:Button ID="btnlogin" runat="server" class="btn btn-primary block full-width m-b"
                     Text="Login" OnClick="btnlogin_Click"></asp:Button>
             </div>
+            <div>
+                &nbsp;
+
+            </div>
+            <div>
+                &nbsp;
+
+            </div>
             <!-- /.col -->
             <a href="forgotpassword.aspx"><small>Forgot password?</small></a>
             <br />
             <br />
-            <div>
+            <%--<div>
                 <span class="style1">People Happiness Survey 2018</span> <a href="https://www.surveymonkey.com/r/BodyandSoulHealthClubPHS-2018"
                     target="_blank"><span class="style2">- For Link (Click Here)</span></a>
                 <br />
                 &nbsp;
-            </div>
+            </div>--%>
             <!-- END LOGIN -->
             <!-- BEGIN COPYRIGHT -->
             <div class="copyright">
                 © All Rights Reserved <a href="http://www.thumbaytechnologies.com/" target="_blank">
                     - Thumbay Technologies</a>
                 <br />
-                <asp:Image ID="Image2" Style="padding-top: 50px; opacity: 0.5;" runat="server" ImageUrl="~/images/TH_Logo.png" />
+                <asp:Image ID="Image2" Style="padding-top: 50px; opacity: 0.5;" runat="server" ImageUrl="~/images/TH_Logo_Red.png" />
             </div>
             <!-- END COPYRIGHT -->
             <!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->

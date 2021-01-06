@@ -21,19 +21,19 @@ namespace ReportEngine
             if (Page.IsPostBack == false)
             {
                 LoadMenus();
-                //Loggeduser.InnerHtml = ((BaseRequest)Session["cache"]).BaseUserfirstName;
-                //spanuserrole.InnerHtml = ((BaseRequest)Session["cache"]).BaseRoleName;
-                //Spanuser.InnerHtml = ((BaseRequest)Session["cache"]).BaseUserfirstName;
+                Loggeduser.InnerHtml = ((BaseRequest)Session["cache"]).BaseUserfirstName;
+                spanuserrole.InnerHtml = ((BaseRequest)Session["cache"]).BaseRoleName;
+                Spanuser.InnerHtml = ((BaseRequest)Session["cache"]).BaseUserfirstName;
                 //lblOutlet.Text = ((BaseRequest)Session["cache"]).BaseOutletAddress;
                 //puser.InnerHtml = ((BaseRequest)Session["cache"]).BaseUserfirstName;
-                ////iframrefresh.ResolveUrl("~/Refresh.aspx");
+                //iframrefresh.ResolveUrl("~/Refresh.aspx");
                 //iframrefresh.Attributes.Add("src", Page.ResolveUrl("~/Refresh.aspx"));
-                BindOutlets();
+                //BindOutlets();
             }
         }
-        void CheckSessionExpiry()
+        public void CheckSessionExpiry()
         {
-            // if (((BaseRequest)Session["cache"]) == null) Response.Redirect("~/Expire.htm");
+            if (((BaseRequest)Session["cache"]) == null) Response.Redirect("~/Authentication.aspx");
         }
         private void LoadMenus(object sender = null, EventArgs e = null)
         {
@@ -127,9 +127,9 @@ namespace ReportEngine
                 menu.Controls.Add(ul);
             }
         }
-        void BindOutlets()
+        /*void BindOutlets()
         {
-            /* try
+             try
              {
                  DataTable dt = new DataTable();
                  dt = ((BaseRequest)Session["cache"]).dtAccessableOutlets;
@@ -149,7 +149,7 @@ namespace ReportEngine
              catch (Exception ex)
              {
 
-             }*/
-        }
+             }
+        }*/
     }
 }

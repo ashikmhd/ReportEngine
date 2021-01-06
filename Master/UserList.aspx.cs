@@ -15,17 +15,13 @@ namespace ReportEngine.Master
         UserInfo ObjUserInfo = null;
         protected void Page_Load(object sender, EventArgs e)
         {
-            CheckSessionExpiry();
+            ((MasterPageFile)this.Master).CheckSessionExpiry();
             if (Page.IsPostBack == false)
             {
                 BindGrid();
             }
         }
 
-        void CheckSessionExpiry()
-        {
-            if (((BaseRequest)Session["cache"]) == null) Response.Redirect("~/Expire.htm");
-        }
         void BindGrid()
         {
             DataTable dt;

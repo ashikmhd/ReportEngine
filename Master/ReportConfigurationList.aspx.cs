@@ -15,6 +15,7 @@ namespace ReportEngine.Master
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            ((MasterPageFile)this.Master).CheckSessionExpiry();
             if (!IsPostBack)
             {
                 bindReportDetails();
@@ -31,7 +32,6 @@ namespace ReportEngine.Master
             gvReportDetails.DataSource = ds.Tables[0];
             gvReportDetails.DataBind();
             gvReportDetails.enableUserAccessibleGrid();
-            //BusinessLayer.General.Common.enableUserAccessibleGrid(gvReportDetails);
         }
     }
 }

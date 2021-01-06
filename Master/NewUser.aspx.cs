@@ -18,6 +18,7 @@ namespace ReportEngine.Master
         {
             try
             {
+                ((MasterPageFile)this.Master).CheckSessionExpiry();
                 if (!IsPostBack)
                 {
                     BindRole();

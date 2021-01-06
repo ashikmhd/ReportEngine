@@ -13,23 +13,54 @@ using System.Web.UI.WebControls;
 
 namespace ReportEngine.Master
 {
-    public partial class MasterCreationList : System.Web.UI.Page
+    public partial class MasterCreationList : CommonBaseClass
     {
         ReportClass reportClass = new ReportClass();
         List<ReportParameters> reportParamList = new List<ReportParameters>();
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+            CheckUserLogin();
+            if (Session["cache"] != null)
             {
-                BindCompany();
-                BindOutlet();
-                BindReportNames();
-                if (Request.QueryString["ReportId"] != null)
+                if (!IsPostBack)
                 {
-                    drpReportName.SelectedValue = Request.QueryString["ReportId"].ToString();
-                    drpReportName_SelectedIndexChanged(null, null);
+                    BindCompany();
+                    BindOutlet();
+                    BindReportNames();
+                    if (Request.QueryString["ReportId"] != null)
+                    {
+                        drpReportName.SelectedValue = Request.QueryString["ReportId"].ToString();
+                        drpReportName_SelectedIndexChanged(null, null);
+                    }
+                } 
+            }
+        }
+        private void CheckUserLogin()
+        {
+            if (Request.QueryString["UserName"] != null)/*If the user accessing from outside*/
+            {
+                General G = new General();
+                try
+                {
+                    UserComponent UComp = Authenticate(1, Request.QueryString["UserName"], "");
+
+                    if (UComp.User.Errorstatus == true)
+                    {
+                        lblmsg.Text = G.Error(UComp.User.ErrorRemarks);
+                    }
+                    else
+                    {
+                        CreateBaseCache(UComp);
+                        Response.Redirect("MasterCreationList.aspx");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    lblmsg.Text = G.Error(ex.Message);
                 }
             }
+            else
+                ((MasterPageFile)this.Master).CheckSessionExpiry();
         }
 
         private void BindCompany()

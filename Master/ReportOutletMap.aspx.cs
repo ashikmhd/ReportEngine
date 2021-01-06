@@ -10,10 +10,11 @@ using System.Web.UI.WebControls;
 
 namespace ReportEngine.Master
 {
-    public partial class ReportOutletMap : System.Web.UI.Page
+    public partial class ReportOutletMap : CommonBaseClass
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            CheckSessionExpiry();
             if (Request.QueryString["ReportId"] != null)
                 hdnReportId.Value = Request.QueryString["ReportId"];
 

@@ -16,7 +16,7 @@
             <asp:HyperLink ID="hlinkNew" runat="server" CssClass="btn btn-primary pull-right" Visible="false">New</asp:HyperLink>
         </div>
         <div class="box-body">
-            <div class="row padding5">                
+            <div class="row padding5">                         
                 <div class="col-md-1">
                     <asp:Label ID="Label1" runat="server" Text="Select Company" />
                 </div>
@@ -54,6 +54,7 @@
                     </Columns>
                 </asp:GridView>
             </div>
+            <asp:Label ID="lblmsg" runat="server"></asp:Label>   
         </div>
     </div>
 </asp:Content>

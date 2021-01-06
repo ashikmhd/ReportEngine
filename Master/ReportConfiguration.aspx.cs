@@ -19,6 +19,7 @@ namespace ReportEngine.Master
         DataTable dtControlProperties = new DataTable();
         protected void Page_Load(object sender, EventArgs e)
         {
+            ((MasterPageFile)this.Master).CheckSessionExpiry();
             if (!IsPostBack)
             {
                 IntializeComponent();

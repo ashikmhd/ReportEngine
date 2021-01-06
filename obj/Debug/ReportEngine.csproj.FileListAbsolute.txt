@@ -1,3 +1,6 @@
+D:\Projects\SVN Projects\CentralReports\obj\Debug\ReportEngine.csprojAssemblyReference.cache
+D:\Projects\SVN Projects\CentralReports\obj\Debug\RdlCompile.cache
+D:\Projects\SVN Projects\CentralReports\obj\Debug\RdlCompile.compiled
 D:\Projects\SVN Projects\CentralReports\bin\ReportEngine.dll.config
 D:\Projects\SVN Projects\CentralReports\bin\ReportEngine.dll
 D:\Projects\SVN Projects\CentralReports\bin\ReportEngine.pdb
@@ -50,6 +53,7 @@ D:\Projects\SVN Projects\CentralReports\bin\roslyn\vbc.exe.config
 D:\Projects\SVN Projects\CentralReports\bin\roslyn\vbc.rsp
 D:\Projects\SVN Projects\CentralReports\bin\roslyn\VBCSCompiler.exe
 D:\Projects\SVN Projects\CentralReports\bin\roslyn\VBCSCompiler.exe.config
+D:\Projects\SVN Projects\CentralReports\bin\AjaxControlToolkit.dll
 D:\Projects\SVN Projects\CentralReports\bin\BuisnessLayer.dll
 D:\Projects\SVN Projects\CentralReports\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 D:\Projects\SVN Projects\CentralReports\bin\Microsoft.ReportViewer.WebForms.dll
@@ -68,10 +72,6 @@ D:\Projects\SVN Projects\CentralReports\bin\pt\Microsoft.SqlServer.Types.resourc
 D:\Projects\SVN Projects\CentralReports\bin\ru\Microsoft.SqlServer.Types.resources.dll
 D:\Projects\SVN Projects\CentralReports\bin\zh-Hans\Microsoft.SqlServer.Types.resources.dll
 D:\Projects\SVN Projects\CentralReports\bin\zh-Hant\Microsoft.SqlServer.Types.resources.dll
-D:\Projects\SVN Projects\CentralReports\obj\Debug\ReportEngine.csprojAssemblyReference.cache
-D:\Projects\SVN Projects\CentralReports\obj\Debug\RdlCompile.cache
-D:\Projects\SVN Projects\CentralReports\obj\Debug\RdlCompile.compiled
 D:\Projects\SVN Projects\CentralReports\obj\Debug\ReportEngine.csproj.CopyComplete
 D:\Projects\SVN Projects\CentralReports\obj\Debug\ReportEngine.dll
 D:\Projects\SVN Projects\CentralReports\obj\Debug\ReportEngine.pdb
-D:\Projects\SVN Projects\CentralReports\bin\AjaxControlToolkit.dll

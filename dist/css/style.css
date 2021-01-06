@@ -168,9 +168,9 @@ h5 {
   font-size: 12px;
 }
 .nav-header {
-  padding: 33px 25px;
-  background-color: #2f4050;
-  background-image: url("patterns/header-profile.png");
+    padding: 33px 25px;
+    background-color: #78b2d8;
+    background-image: url("patterns/header-profile.png");
 }
 .pace-done .nav-header {
   transition: all 0.4s;
@@ -651,23 +651,23 @@ body.canvas-menu.mini-navbar nav.navbar-static-side {
   color: #fff;
 }
 .btn-primary {
-  background-color: #f57d20;
-  border-color: #737b35;
-  color: #FFFFFF;
+    background-color: #2083f5;
+    border-color: #63daf0;
+    color: #FFFFFF;
 }
-.btn-primary:hover,
-.btn-primary:focus,
-.btn-primary:active,
-.btn-primary.active,
-.open .dropdown-toggle.btn-primary,
-.btn-primary:active:focus,
-.btn-primary:active:hover,
-.btn-primary.active:hover,
-.btn-primary.active:focus {
-  background-color: #b8c45e;
-  border-color: #f57d20;
-  color: #FFFFFF;
-}
+    .btn-primary:hover,
+    .btn-primary:focus,
+    .btn-primary:active,
+    .btn-primary.active,
+    .open .dropdown-toggle.btn-primary,
+    .btn-primary:active:focus,
+    .btn-primary:active:hover,
+    .btn-primary.active:hover,
+    .btn-primary.active:focus {
+        background-color: #b8c45e;
+        border-color: #2083f5;
+        color: #FFFFFF;
+    }
 .btn-primary:active,
 .btn-primary.active,
 .open .dropdown-toggle.btn-primary {
@@ -3477,11 +3477,11 @@ body.tour-open .animated {
   border-bottom: 1px solid #e7eaec;
 }
 body {
-  font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  background-color: #2f4050;
-  font-size: 13px;
-  color: #676a6c;
-  overflow-x: hidden;
+    font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background-color: #ccf4f5;
+    font-size: 13px;
+    color: #d20b1d;
+    overflow-x: hidden;
 }
 html,
 body {
@@ -4701,10 +4701,10 @@ body.mini-navbar.fixed-sidebar .logo-element {
   padding-top: 110px;
 }
 .loginscreen.middle-box {
-  width: 600px;
+  width: 900px;
 }
 .loginColumns {
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
   padding: 100px 20px 20px 20px;
 }

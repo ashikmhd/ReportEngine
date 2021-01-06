@@ -11,12 +11,14 @@ using System.Web.UI.WebControls;
 
 namespace ReportEngine.Reports
 {
-    public partial class DynamicReportDisplay : System.Web.UI.Page
+    public partial class DynamicReportDisplay : CommonBaseClass
     {
         ReportClass reportClass = new ReportClass();
         ReportDTO reportDTO = new ReportDTO();
         protected void Page_Load(object sender, EventArgs e)
-        {
+        {           
+            CheckSessionExpiry();
+
             if (!IsPostBack)
             {
                 try

@@ -25,6 +25,8 @@ namespace ReportEngine.Master
         DynamicControls dynamicControls = new DynamicControls();
         protected void Page_Load(object sender, EventArgs e)
         {
+            ((MasterPageFile)this.Master).CheckSessionExpiry();
+
             if (Request.QueryString["PrimaryKeyId"] != null)
                 PrimaryKeyId = int.Parse(Request.QueryString["PrimaryKeyId"].ToString());
             if (Request.QueryString["ReportId"] != null)

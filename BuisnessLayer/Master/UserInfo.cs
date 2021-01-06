@@ -47,6 +47,7 @@ namespace BuisnessLayer.Master
         public int OutletRenewMax;
 
         public DataTable dtAccessableOutlets = null;
+        public int Flag;
 
         private ClsUserLoginDetails ObjUserLoginDetails;
         public ClsUserLoginDetails UserLoginDetails
@@ -62,6 +63,7 @@ namespace BuisnessLayer.Master
                 sqlCmd = new SqlCommand();
                 sqlCmd.CommandType = CommandType.StoredProcedure;
                 sqlCmd.CommandText = "UserInfo_Login_new";
+                sqlCmd.Parameters.AddWithValue("@Flag", Flag);
                 sqlCmd.Parameters.Add("@uid", SqlDbType.VarChar, 255);
                 sqlCmd.Parameters["@uid"].Value = uid;
                 sqlCmd.Parameters.Add("@pwd", SqlDbType.VarChar, 50);
@@ -76,6 +78,14 @@ namespace BuisnessLayer.Master
                     if (DtUser.Rows.Count > 0)
                     {
                         this.id = int.Parse(DtUser.Rows[0]["pki_UserId"].ToString());
+
+                        uid = DtUser.Rows[0]["vc_UserName"].ToString();
+                        fname = DtUser.Rows[0]["vc_FirstName"].ToString();
+                        lname = DtUser.Rows[0]["vc_LastName"].ToString();
+                        Empid = int.Parse(DtUser.Rows[0]["i_EmployeeID"].ToString());
+                        isnew = bool.Parse(DtUser.Rows[0]["b_FirstUser"].ToString());
+                        RoleID = int.Parse(DtUser.Rows[0]["fki_RoleID"].ToString());
+                        RoleName = DtUser.Rows[0]["vc_RoleName"].ToString();
 
                         //    OutletClass _OutletClass = new OutletClass();
                         //    DataTable dtOutlets = _OutletClass.Fetch_UserOutlet(0, this.id);

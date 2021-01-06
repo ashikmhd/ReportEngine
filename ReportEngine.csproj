@@ -6556,7 +6556,17 @@
     <Content Include="dist\js\demo.js" />
     <Content Include="dist\js\pages\dashboard.js" />
     <Content Include="dist\js\pages\dashboard2.js" />
+    <Content Include="DLLS\AjaxControlToolkit.dll" />
     <Content Include="ForgotPassword.aspx" />
+    <Content Include="Images\Ashik_Photo.jpg" />
+    <Content Include="Images\Bajesh_Photo.jpg" />
+    <Content Include="Images\BS_LOGO_Head.png" />
+    <Content Include="Images\spinner.gif" />
+    <Content Include="Images\Thumbaytechlogo.png" />
+    <Content Include="Images\Thumbay_Logo.png" />
+    <Content Include="Images\TH_Logo_Red.png" />
+    <Content Include="Images\ttlogo_icon.ico" />
+    <Content Include="Images\TT_Logo.png" />
     <Content Include="Main.aspx" />
     <Content Include="Master\ChangePassword.aspx" />
     <Content Include="Master\MasterCreation.aspx" />
@@ -6921,6 +6931,9 @@
     </Compile>
     <Compile Include="Authentication.aspx.designer.cs">
       <DependentUpon>Authentication.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CommonBaseClass.cs">
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ForgotPassword.aspx.cs">
       <DependentUpon>ForgotPassword.aspx</DependentUpon>

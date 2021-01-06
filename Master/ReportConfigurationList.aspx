@@ -45,7 +45,7 @@
             <%--<a href="../Reports/ReportSelect.aspx" class="btn btn-primary pull-right">Render Reports</a>--%>
         </div>
         <div class="box-body">
-            <div class="row padding5">
+            <div class="row padding5" style="width:auto; ">
                 <asp:GridView ID="gvReportDetails" runat="server" CssClass="table table-striped table-bordered table-hover"
                     AutoGenerateColumns="false">
                     <Columns>
@@ -55,13 +55,13 @@
                             </ItemTemplate>
                         </asp:TemplateField>
 
-                        <asp:BoundField DataField="pki_ReportId" HeaderText="Report Id" />
-                        <asp:BoundField DataField="TypeName" HeaderText="Type" />
-                        <asp:BoundField DataField="vc_ReportName" HeaderText="Report Name" />
-                        <asp:BoundField DataField="vc_ReportDescription" HeaderText="Report Description" />
-                        <asp:BoundField DataField="vc_ReportQuery" HeaderText="Select Query" />
-                        <asp:BoundField DataField="vc_InsertQuery" HeaderText="Insert Query" />
-                        <asp:BoundField DataField="vc_UpdateQuery" HeaderText="Update Query" />
+                        <%--<asp:BoundField DataField="pki_ReportId" HeaderText="Report Id" ItemStyle-Width="5%"  />--%>
+                        <asp:BoundField DataField="TypeName" HeaderText="Type"  ItemStyle-Width="5%"  />
+                        <asp:BoundField DataField="vc_ReportName" HeaderText="Report Name"  ItemStyle-Width="5%" />
+                        <asp:BoundField DataField="vc_ReportDescription" HeaderText="Report Description"  ItemStyle-Width="5%"  />
+                        <asp:BoundField DataField="vc_ReportQuery" HeaderText="Select Query"  ItemStyle-Width="20%" />
+                        <asp:BoundField DataField="vc_InsertQuery" HeaderText="Insert Query"  ItemStyle-Width="20%" />
+                        <asp:BoundField DataField="vc_UpdateQuery" HeaderText="Update Query"  ItemStyle-Width="20%" />
                         <%--<asp:BoundField DataField="IsActiveText" HeaderText="Active"/>--%>
                         <asp:TemplateField HeaderText="Active">
                             <ItemTemplate>

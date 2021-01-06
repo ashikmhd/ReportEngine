@@ -15,7 +15,7 @@ using System.Web.UI.WebControls;
 
 namespace ReportEngine.Reports
 {
-    public partial class ReportSelect : System.Web.UI.Page
+    public partial class ReportSelect : CommonBaseClass
     {
         ReportClass reportClass = new ReportClass();
         List<Control> controlList = new List<Control>();
@@ -24,23 +24,54 @@ namespace ReportEngine.Reports
         DynamicControls dynamicControls = new DynamicControls();
         protected void Page_Load(object sender, EventArgs e)
         {
-            reportDTO = new ReportDTO();            
+            CheckUserLogin();
+            reportDTO = new ReportDTO();
 
-            if (!IsPostBack)
+            if (Session["cache"] != null)
             {
-                Session["phDynamicControls"] = null;
-                controlList = new List<Control>();
-                reportParamList = new List<ReportParameters>();
+                if (!IsPostBack)
+                {
+                    Session["phDynamicControls"] = null;
+                    controlList = new List<Control>();
+                    reportParamList = new List<ReportParameters>();
 
-                BindCompany();
-                BindOutlet();
-                BindReportNames();
-                //bindControls();
+                    BindCompany();
+                    BindOutlet();
+                    BindReportNames();
+                    //bindControls();
+                }
+                else
+                {
+                    recreateControls();
+                }
+            }
+        }
+        private void CheckUserLogin()
+        {
+            if (Request.QueryString["UserName"] != null)/*If the user accessing from outside*/
+            {
+                General G = new General();
+                try
+                {
+                    UserComponent UComp = Authenticate(1, Request.QueryString["UserName"], "");
+
+                    if (UComp.User.Errorstatus == true)
+                    {                        
+                        lblmsg.Text = G.Error(UComp.User.ErrorRemarks);
+                    }
+                    else
+                    {
+                        CreateBaseCache(UComp);
+                        Response.Redirect("ReportSelect.aspx");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    lblmsg.Text = G.Error(ex.Message);
+                }
             }
             else
-            {
-                recreateControls();
-            }
+                ((MasterPageFile)this.Master).CheckSessionExpiry();
         }
         private void BindCompany()
         {

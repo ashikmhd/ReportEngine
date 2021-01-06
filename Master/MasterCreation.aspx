@@ -1,7 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPageFile.Master" AutoEventWireup="true" CodeBehind="MasterCreation.aspx.cs" Inherits="ReportEngine.Master.MasterCreation" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <script src="../Scripts/ReportControlScript.js"></script>
-     <div class="box">
+    <div class="box">
         <div class="box-header">
             <h3 class="box-title">
                 <asp:Label ID="lblMasterName" runat="server" Text="Master Creation"></asp:Label></h3>
@@ -12,8 +13,8 @@
             <asp:HiddenField runat="server" ID="hdnQuery"></asp:HiddenField>
             <asp:HiddenField runat="server" ID="hdnInsertQuery"></asp:HiddenField>
             <asp:HiddenField runat="server" ID="hdnUpdateQuery"></asp:HiddenField>
-             <asp:HiddenField runat="server" ID="hdnConnection"></asp:HiddenField>
-           
+            <asp:HiddenField runat="server" ID="hdnConnection"></asp:HiddenField>
+
             <div class="row">
                 <asp:PlaceHolder runat="server" ID="phDynamicControls"></asp:PlaceHolder>
             </div>

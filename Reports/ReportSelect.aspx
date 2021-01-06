@@ -10,7 +10,8 @@
         </div>
         <div class="box-body">
             <asp:HiddenField runat="server" ID="hdnQuery"></asp:HiddenField>
-             <asp:HiddenField runat="server" ID="hdnConnection"></asp:HiddenField>
+             <asp:HiddenField runat="server" ID="hdnConnection"></asp:HiddenField>            
+            <asp:Label ID="lblmsg" runat="server"></asp:Label>
             <div class="row">
                 <div class="col-md-1">
                     <asp:Label ID="Label1" runat="server" Text="Select Company" />
